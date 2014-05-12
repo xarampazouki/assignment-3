@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package schulze;
+
+/**
+ *
+ * @author Apostolis
+ */
+class BallotWrapper {
+    private String candidateName;
+    private int ballotPower;
+
+    public BallotWrapper(String candidateName, int ballotPower) {
+        this.candidateName = candidateName;
+        this.ballotPower = ballotPower;
+    }
+
+    public String getCandidateName() {
+        return candidateName;
+    }
+
+    public int getBallotPower() {
+        return ballotPower;
+    }
+
+    public void setCandidateName(String candidateName) {
+        this.candidateName = candidateName;
+    }
+
+    public void setBallotPower(int ballotPower) {
+        this.ballotPower = ballotPower;
+    }
+
+}
