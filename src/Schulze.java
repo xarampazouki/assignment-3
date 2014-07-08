@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package schulze;
 
 import java.io.IOException;
@@ -17,15 +11,9 @@ import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONTokener;
 import org.json.JSONObject;
-/**
- *
- * @author Apostolis
- */
+
 public class Schulze {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         ArrayList<Ballot> ballots = new ArrayList<>();
         HashMap<String, Integer> candidates = new HashMap<>();
@@ -40,7 +28,6 @@ public class Schulze {
         try {
             String fileName = args[0];
             uri = new URI("file:///"+ fileName);
-            //uri = new URI("https://raw.githubusercontent.com/dmst-algorithms-course/assigmnent-3/master/example_elections.json");
             JSONTokener tokener = new JSONTokener(uri.toURL().openStream());
             JSONObject root = new JSONObject(tokener);
             JSONArray arr  = root.getJSONArray("ballots");
@@ -112,7 +99,7 @@ public class Schulze {
                     }
                 }
                 System.out.println("");
-            } 
+            }
             for(int i = 0; i < nodes.size(); i++) {
                 for(int j = 0; j < nodes.size(); j++) {
                     if(graphPairwisePreferences[i][j] - graphPairwisePreferences[j][i] > 0) {
@@ -149,10 +136,7 @@ public class Schulze {
                     }
                 }
                 System.out.println("");
-            } 
-/*            for(int i = 0; i < edges.size(); i++) {
-                System.out.println(edges.get(i).toString());
-            }*/
+            }
             for(int i = 0; i < nodes.size(); i++) {
                 list[i] = new ArrayList<>();
                 for(int j = 0; j < nodes.size(); j++) {
@@ -177,7 +161,7 @@ public class Schulze {
                     } else {
                         System.out.print(nodes.get(list[i].get(j)).getCandidateName() + ", ");
                     }
-                    
+
                 }
                 if(list[i].isEmpty()) {
                     System.out.print("]");
@@ -191,8 +175,8 @@ public class Schulze {
         } catch (IOException ex) {
             Logger.getLogger(Schulze.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
+
     }
     private static int min(int a, int b) {
         if(a >= b) {
